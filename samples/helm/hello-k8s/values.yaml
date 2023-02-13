@@ -1,0 +1,16 @@
+---
+# Deployment
+replicas: 1
+image: localhost:5000/hello-app:1.0
+imagePullPolicy: IfNotPresent
+
+# Service
+service:
+  type: ClusterIP
+  port: 8080
+
+# Ingress
+ingress:
+  pathtype: Prefix
+  path: /
+  host: hello-k8s.ecm
